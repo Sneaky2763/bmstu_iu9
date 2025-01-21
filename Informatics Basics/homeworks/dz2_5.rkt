@@ -1,0 +1,12 @@
+(define (list-trim-right lst)
+  (define (list-analyze res all lst)
+    (if (null? lst)
+        res
+        (if (not (char-whitespace? (car lst)))
+            (list-analyze (append all (cons (car lst) '())) (append all (cons (car lst) '())) (cdr lst))
+            (list-analyze res (append all (cons (car lst) '())) (cdr lst))
+            )
+        )
+    )
+  (list-analyze '() '() lst)
+  )
