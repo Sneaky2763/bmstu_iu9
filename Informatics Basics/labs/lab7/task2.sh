@@ -18,7 +18,7 @@ rec() {
 }
 
 while read filename; do
-   CNT=$((CNT + $(cat $filename | sed '/^s$/d' | wc -l)))
+   CNT=$((CNT + $(cat $filename | sed '/^\s*$/d' | wc -l)))
 done <<< $(rec $1)
 
 echo $CNT

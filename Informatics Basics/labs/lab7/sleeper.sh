@@ -1,3 +1,3 @@
 #!/bin/bash
-PAUSE=(sleep 1s)
-$PAUSE
+sleep 120s
+echo "iteration done"
